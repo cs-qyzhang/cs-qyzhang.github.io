@@ -76,8 +76,8 @@ $ reboot
 
 ## References
 
-1. [Persistent Memory | Administration Guide | SUSE Linux Enterprise Server 15 SP1](https://documentation.suse.com/sles/15-SP1/html/SLES-all/cha-nvdimm.html)
+1. [Persistent Memory &#124; Administration Guide &#124; SUSE Linux Enterprise Server 15 SP1](https://documentation.suse.com/sles/15-SP1/html/SLES-all/cha-nvdimm.html)
 2. [pmem.io: Memkind Support for KMEM DAX Option](https://pmem.io/2020/01/20/memkind-dax-kmem.html)
 3. [Linux Kernel 中 AEP 的现状和发展](https://kernel.taobao.org/2019/05/NVDIMM-in-Linux-Kernel/)
 4. [[0/5,v5] Allow persistent memory to be used like normal RAM - Patchwork](https://patchwork.kernel.org/project/linux-nvdimm/cover/20190225185727.BCBD768C@viggo.jf.intel.com/)
-5. [Opportunities for Partitioning Non-volatile Memory DIMMs Between Co-scheduled Jobs on HPC Nodes](zotero://select/items/@goglinOpportunitiesPartitioningNonvolatile2020)
+5. [Opportunities for Partitioning Non-volatile Memory DIMMs Between Co-scheduled Jobs on HPC Nodes](https://doi.org/10.1007/978-3-030-48340-1_7)
