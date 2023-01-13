@@ -2,7 +2,7 @@
 categories:
 - DevOps
 date: 2023-01-07 10:31:46 +0800
-last_modified_at: 2023-01-13 18:24:15 +0800
+last_modified_at: 2023-01-13 18:45:23 +0800
 tags:
 - linux
 - devops
@@ -97,8 +97,8 @@ Obsidian 和 Chirpy 都支持如下所示的提示框：
 Obsidian 中将此称为 callouts，使用如下语法：
 
 ```markdown
+> [!warning]
 > 这里包含了一些需要注意的事项
-{: .prompt-warning }
 ```
 
 而在 Chirpy 中则称为 prompts，使用如下语法：
@@ -116,7 +116,7 @@ Obsidian 中将此称为 callouts，使用如下语法：
 
 为了执行 Jekyll 的部署，首先需要在服务器上搭建 Jekyll 环境，具体的搭建方法见 [Jekyll](https://jekyllrb.com/)，这里假设在服务器上已经有了 Jekyll 环境。
 
-用于部署的 python 脚本使用了 [GitPython](https://gitpython.readthedocs.io/en/stable/) 包来执行 git 操作，而 nginx 和 fcgiwrap 使用的 Linux 用户都是 `www-data`，所以使用其他用户进行 ` pip install ` 是不可以的， `www-data` 会无法识别到 GitPython 包。这里我们使用 `apt` 安装该包。下面是服务器上搭建部署环境的一些命令：
+用于部署的 python 脚本使用了 [GitPython](https://gitpython.readthedocs.io/en/stable/) 包来执行 git 操作，而 nginx 和 fcgiwrap 使用的 Linux 用户都是 `www-data`，所以使用其他用户进行 `pip install` 是不可以的， `www-data` 会无法识别到 GitPython 包。这里我们使用 `apt` 安装该包。下面是服务器上搭建部署环境的一些命令：
 
 ```bash
 sudo apt install python3-git # 安装全局的 GitPython 包
