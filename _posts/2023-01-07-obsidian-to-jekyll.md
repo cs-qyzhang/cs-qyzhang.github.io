@@ -2,7 +2,7 @@
 categories:
 - DevOps
 date: 2023-01-07 10:31:46 +0800
-last_modified_at: 2023-01-13 18:45:23 +0800
+last_modified_at: 2023-01-13 19:34:22 +0800
 tags:
 - linux
 - devops
@@ -72,7 +72,7 @@ Jekyll 可以在 frontmatter 中指定博文的发表日期和修改日期，这
 
 ### 图片处理
 
-Obsidian 和 Chirpy 各自有不同的语法来指定图像的大小等内容。Obsidian 在图片的 alt 文本中指定，如 `![xxx](xxx.png){: .normal }{: width="400" height="300" }` 语法指定。所以为了在 Obsidian 中保持 Obsidian 的语法需要在 python 脚本中进行转换。
+Obsidian 和 Chirpy 各自有不同的语法来指定图像的大小等内容。Obsidian 在图片的 alt 文本中指定，如 `![xxx](xxx.png){: width="400" height="300" }` 语法指定。所以为了在 Obsidian 中保持 Obsidian 的语法需要在 python 脚本中进行转换。
 
 除此之外，Chirpy 还可以通过下面的语法指定图片的标题：
 
@@ -81,11 +81,11 @@ Obsidian 和 Chirpy 各自有不同的语法来指定图像的大小等内容。
 _caption_
 ```
 
-然而在 Obsidian 中目前还不支持添加图片的标题。为了能够在 Jekyll 博文中给图片添加标题，这里选择扩展一下 Obsidian 的指定图片大小的语法，通过在 alt 文本中再添加一个 `|` 来指定标题，如 `![alt](xxx.png){: width="400" .normal }` 就意味着 alt 文本是“alt”，标题为“caption”，图片宽度为 400。需要注意的是要识别一下几种情况：只有 alt，alt+size，alt+caption，alt+size+caption。
+然而在 Obsidian 中目前还不支持添加图片的标题。为了能够在 Jekyll 博文中给图片添加标题，这里选择扩展一下 Obsidian 的指定图片大小的语法，通过在 alt 文本中再添加一个 `|` 来指定标题，如 `![alt](xxx.png){: width="400" }` 就意味着 alt 文本是“alt”，标题为“caption”，图片宽度为 400。需要注意的是要识别一下几种情况：只有 alt，alt+size，alt+caption，alt+size+caption。
 
 ### 链接处理
 
-在测试时发现 Jekyll 的 md 渲染器不能识别 `[]()` 链接里中括号内含有 `&#124;` 字符的情况，比如 `[title &#124; subtitle](https://example.com)`，包含 `|` 时无法正常渲染链接，但将 `|` 改为对应的 html 代码 `&#124;` 后即可正常渲染，所以在 python 脚本中还会对这种情况进行处理。
+在测试时发现 Jekyll 的 md 渲染器不能识别 `[]()` 链接里中括号内含有 `&#124;` 字符的情况，比如 `[title | subtitle](https://example.com)`，包含 `|` 时无法正常渲染链接，但将 `|` 改为对应的 html 代码 `&#124;` 后即可正常渲染，所以在 python 脚本中还会对这种情况进行处理。
 
 ### Callouts 转换为 Prompts
 
@@ -156,7 +156,7 @@ print("Success")
 
 Nginx 的配置文件内容如下：
 
-```
+```nginx
 server {
     listen 80;
     listen [::]:80;
