@@ -85,7 +85,7 @@ _caption_
 
 ### 链接处理
 
-在测试时发现 Jekyll 的 md 渲染器不能识别 `[]()` 链接里中括号内含有 `&#124;` 字符的情况，比如 `[title | subtitle](https://example.com)`，包含 `|` 时无法正常渲染链接，但将 `|` 改为对应的 html 代码 `&#124;` 后即可正常渲染，所以在 python 脚本中还会对这种情况进行处理。
+在测试时发现 Jekyll 的 md 渲染器不能识别 `[]()` 链接里中括号内含有 `|` 字符的情况，比如 `[title | subtitle](https://example.com)`，包含 `|` 时无法正常渲染链接，但将 `|` 改为对应的 html 代码 `&#124;` 后即可正常渲染，所以在 python 脚本中还会对这种情况进行处理。
 
 ### Callouts 转换为 Prompts
 
