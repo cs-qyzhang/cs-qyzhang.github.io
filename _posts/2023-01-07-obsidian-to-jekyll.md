@@ -2,7 +2,7 @@
 categories:
 - DevOps
 date: 2023-01-07 10:31:46 +0800
-last_modified_at: 2023-01-13 23:41:23 +0800
+last_modified_at: 2023-01-14 00:01:13 +0800
 tags:
 - linux
 - devops
@@ -25,9 +25,13 @@ title: Obsidian 笔记自动转换为 Jekyll 博客
 
 这样在写好博文后就只需要运行本地的 python 脚本就可以完成整个转换和部署流程。
 
-## Chiripy 主题
+## Chirpy 主题
 
 该方案有许多内容都是与 Jekyll 的 [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) 主题相关的，包括 python 脚本中的代码。若要使用其他主题请相应地进行修改。
+
+## OSS 图床
+
+在 Obsidian 笔记中我使用了 [image auto upload](https://github.com/renmu123/obsidian-image-auto-upload-plugin) 插件来自动将复制到笔记中的图片上传到阿里云 OSS 中（40G 一年只需不到 10 元）并在笔记内使用对应的图片链接。这样可以避免在 Obsidian vault 文件夹下有着杂乱的图片文件，而且更容易发布和分享，只需要一个 md 文件即可。在部署 Jekyll 的时候也体会到了使用图床的好处，也避免了在 Jekyll 仓库中放置大量的图片，以及避免了向服务器发送图片请求。一些共享的资料文件也可以放在 OSS 上并使用对应的链接，比如本文中使用的 python 脚本。使用对象存储作为图床并非必须但十分推荐，如果你使用的不是对象存储那么在将 Obsidian 笔记时需要编写额外的代码把对应的图片复制到 Jekyll 仓库中。
 
 ## 将 Obsidian 笔记转换为 Jekyll 博文
 
