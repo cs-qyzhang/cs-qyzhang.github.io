@@ -2,7 +2,7 @@
 categories:
 - DevOps
 date: 2023-01-07 10:31:46 +0800
-last_modified_at: 2023-01-13 19:34:22 +0800
+last_modified_at: 2023-01-13 23:41:23 +0800
 tags:
 - linux
 - devops
@@ -31,7 +31,7 @@ title: Obsidian 笔记自动转换为 Jekyll 博客
 
 ## 将 Obsidian 笔记转换为 Jekyll 博文
 
-Obsidian 笔记和 Jekyll 博文一样都是使用的 markdown 进行编写，但两者所使用的一些自定义语法不同，Jekyll 所需的 frontmatter 也不同。另外 Obsidian 笔记更偏向个人记录，可能一些内容不适合在博文中出现，所以需要有一个办法能够既保持 Obsidian 笔记的个人内容又能自动地在博文中去掉或转换这些内容。为此，编写了一个 python 脚本来自动化该过程，该脚本可在 [github gist](https://gist.github.com/cs-qyzhang/9ae9f68f91e6c853ce6911f07eddf168) 下载。下面介绍该脚本的设计。
+Obsidian 笔记和 Jekyll 博文一样都是使用的 markdown 进行编写，但两者所使用的一些自定义语法不同，Jekyll 所需的 frontmatter 也不同。另外 Obsidian 笔记更偏向个人记录，可能一些内容不适合在博文中出现，所以需要有一个办法能够既保持 Obsidian 笔记的个人内容又能自动地在博文中去掉或转换这些内容。为此，编写了一个 python 脚本来自动化该过程，该脚本可在 [github gist](https://gist.github.com/cs-qyzhang/9ae9f68f91e6c853ce6911f07eddf168) 或 [Aliyun OSS](https://qyzhang-obsidian.oss-cn-hangzhou.aliyuncs.com/obsidian_to_jekyll.py) 下载。下面介绍该脚本的设计。
 
 ### 使用 `Posts` 笔记保存元数据
 
@@ -81,7 +81,7 @@ Obsidian 和 Chirpy 各自有不同的语法来指定图像的大小等内容。
 _caption_
 ```
 
-然而在 Obsidian 中目前还不支持添加图片的标题。为了能够在 Jekyll 博文中给图片添加标题，这里选择扩展一下 Obsidian 的指定图片大小的语法，通过在 alt 文本中再添加一个 `|` 来指定标题，如 `![alt](xxx.png){: width="400" }` 就意味着 alt 文本是“alt”，标题为“caption”，图片宽度为 400。需要注意的是要识别一下几种情况：只有 alt，alt+size，alt+caption，alt+size+caption。
+然而在 Obsidian 中目前还不支持添加图片的标题。为了能够在 Jekyll 博文中给图片添加标题，这里选择扩展一下 Obsidian 的指定图片大小的语法，通过在 alt 文本中再添加一个 `|` 来指定标题，如 `![alt](xxx.png){: width="400" }` 就意味着 alt 文本是“alt”，标题为“caption”，图片宽度为 400。需要注意的是要识别一下几种情况：只有 alt，alt + size，alt + caption，alt + size + caption。
 
 ### 链接处理
 
