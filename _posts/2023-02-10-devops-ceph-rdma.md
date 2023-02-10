@@ -17,7 +17,7 @@ title: Ceph 块存储 RBD 在 RDMA 网络下的部署
 
 刚开始尝试使用 `cephadm bootstrap` 命令配置，但可能是因为 RDMA 网卡没有暴露给 docker 容器的原因，这种方式没有配置成功。于是选择了手动配置。
 
-手动编译 Ceph 出了各种问题，于是选择了直接使用官方提供的 https://download.ceph.com/ apt 源，Ubuntu 20.04 默认的 Ceph 版本似乎不行。见 [Get Packages — Apt](https://docs.ceph.com/en/latest/install/get-packages/#apt)。
+手动编译 Ceph 出了各种问题，于是选择了直接使用官方提供的 <https://download.ceph.com/> apt 源，Ubuntu 20.04 默认的 Ceph 版本似乎不行。见 [Get Packages — Apt](https://docs.ceph.com/en/latest/install/get-packages/#apt)。
 
 为了方便这里把认证都关闭了，所以下面没有运行生成 keyring 的过程。
 
@@ -31,7 +31,7 @@ sudo -u ceph ceph-mon --mkfs -i {hostname} --monmap /tmp/monmap
 
 之后需要修改 `/etc/ceph/ceph.conf` 配置文件。建议先在其他地方写配置文件然后拷贝过去，在后续出错删除集群时会把 `/etc/ceph/ceph.conf` 删掉。对应的配置文件如下所示，使用 `show_gids` 可以获取 RDMA 网卡对应的 gid。
 
-```toml
+```
 [global]
 fsid = <uuidgen>
 mon host = <ethernet ip addr, not roce port addr>
@@ -61,7 +61,7 @@ ceph hard memlock unlimited
 
 之后重新登录生效。然后在 `/lib/systemd/system` 文件夹下的 `ceph-mon@.service`，`ceph-mgr@.service`，`ceph-osd@.service` 文件中加入以下内容（注意原来的文件有没有这些配置，如果有的话先删掉）。见 [Bring Up Ceph RDMA](https://enterprise-support.nvidia.com/s/article/bring-up-ceph-rdma---developer-s-guide)。
 
-```toml
+```systemd
 [Service]
 LimitMEMLOCK=infinity
 PrivateDevices=no
@@ -95,7 +95,7 @@ sudo ceph-volume lvm list
 sudo ceph-volume lvm activate {OSD ID} {OSD FSID}
 ```
 
-然后还需要创建 pool 和 rbd，见 [Basic Block Device Commands](https://docs.ceph.com/en/latest/rbd/rados-rbd-cmds/) ：
+然后还需要创建 pool 和 image，见 [Basic Block Device Commands](https://docs.ceph.com/en/latest/rbd/rados-rbd-cmds/) ：
 
 ```bash
 rbd pool init <pool-name>
