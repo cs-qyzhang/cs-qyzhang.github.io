@@ -2,7 +2,7 @@
 categories:
 - SSD
 date: 2023-08-16 20:22:00 +0800
-last_modified_at: 2023-08-16 20:34:18 +0800
+last_modified_at: 2023-08-16 20:42:03 +0800
 tags:
 - linux
 - io_uring
@@ -53,6 +53,8 @@ int iouring_passthru_enqueue(struct io_uring *ring, int fd,
         printf("Failed to get io_uring sqe\n");
         return -1;
     }
+    // fd = open('/dev/ng0n1')
+    // see https://lpc.events/event/11/contributions/989/attachments/747/1723/lpc-2021-building-a-fast-passthru.pdf
     sqe->fd = fd;
     sqe->opcode = IORING_OP_URING_CMD;
     sqe->cmd_op = NVME_URING_CMD_IO;  // see linux/nvme_ioctl.h
