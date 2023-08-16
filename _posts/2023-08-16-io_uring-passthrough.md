@@ -2,7 +2,7 @@
 categories:
 - SSD
 date: 2023-08-16 20:22:00 +0800
-last_modified_at: 2023-08-16 20:30:49 +0800
+last_modified_at: 2023-08-16 20:34:18 +0800
 tags:
 - linux
 - io_uring
@@ -20,7 +20,7 @@ io_uring 本身是 Linux 内核提出的一种新的异步 IO 接口，其使用
 
 ## 代码
 
-一个简单的代码样例如下所示，需要内核版本大于等于 5.19，并需要安装 `liburing`。
+一个简单的代码样例如下所示，需要内核版本大于等于 5.19，并需要安装 `liburing`。Github gist: [io\_uring nvme passthru](https://gist.github.com/cs-qyzhang/27c6e0821670fe02ddaede1046135eba)。
 
 ```c
 #include <stdio.h>
