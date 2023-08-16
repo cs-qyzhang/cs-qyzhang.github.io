@@ -2,7 +2,7 @@
 categories:
 - SSD
 date: 2023-08-16 20:22:00 +0800
-last_modified_at: 2023-08-16 20:29:37 +0800
+last_modified_at: 2023-08-16 20:30:49 +0800
 tags:
 - linux
 - io_uring
@@ -92,18 +92,11 @@ int iouring_wait_nr(struct io_uring *ring, int nr)
 ## 参考文献
 
 [1] Linux-nvme mailing list: [Fixed-buffers io\_uring passthrough over nvme-char - Kanchan Joshi](https://lore.kernel.org/linux-nvme/20210805125539.66958-1-joshi.k@samsung.com/) \
-[2] io_uring fio: [GitHub - joshkan/fio at uring\_cmd\_nvme\_v4](https://github.com/joshkan/fio/blob/big-cqe-pt.v4/engines/io_uring.c)
-
-[3] liburing: [GitHub - axboe/liburing](https://github.com/axboe/liburing)
-
-[4] io_uring doc: [Lord of the io\_uring documentation](https://unixism.net/loti/index.html)
-
-[5] Presentation: [Building a fast NVMe passthru](https://lpc.events/event/11/contributions/989/attachments/747/1723/lpc-2021-building-a-fast-passthru.pdf)
-
-[6] LWN: [ioctl() for io\_uring]( https://lwn.net/Articles/844875/ )
-
-[7] Presentation: [What's new with io\_uring](https://kernel.dk/axboe-kr2022.pdf)
-
-[8] Manpage: [io\_uring(7) - Linux manual page](https://man7.org/linux/man-pages/man7/io_uring.7.html)
-
+[2] io_uring fio: [GitHub - joshkan/fio at uring\_cmd\_nvme\_v4](https://github.com/joshkan/fio/blob/big-cqe-pt.v4/engines/io_uring.c)\
+[3] liburing: [GitHub - axboe/liburing](https://github.com/axboe/liburing)\
+[4] io_uring doc: [Lord of the io\_uring documentation](https://unixism.net/loti/index.html)\
+[5] Presentation: [Building a fast NVMe passthru](https://lpc.events/event/11/contributions/989/attachments/747/1723/lpc-2021-building-a-fast-passthru.pdf)\
+[6] LWN: [ioctl() for io\_uring]( https://lwn.net/Articles/844875/ )\
+[7] Presentation: [What's new with io\_uring](https://kernel.dk/axboe-kr2022.pdf)\
+[8] Manpage: [io\_uring(7) - Linux manual page](https://man7.org/linux/man-pages/man7/io_uring.7.html)\
 [9] Manpage: [io\_uring\_setup(2) - Linux manual page](https://man7.org/linux/man-pages/man2/io_uring_setup.2.html)
