@@ -2,7 +2,7 @@
 categories:
 - SSD
 date: 2023-08-16 20:22:00 +0800
-last_modified_at: 2023-08-16 20:25:59 +0800
+last_modified_at: 2023-08-16 20:29:37 +0800
 tags:
 - linux
 - io_uring
@@ -91,8 +91,7 @@ int iouring_wait_nr(struct io_uring *ring, int nr)
 
 ## 参考文献
 
-[1] Linux-nvme mailing list: [Fixed-buffers io\_uring passthrough over nvme-char - Kanchan Joshi](https://lore.kernel.org/linux-nvme/20210805125539.66958-1-joshi.k@samsung.com/)
-
+[1] Linux-nvme mailing list: [Fixed-buffers io\_uring passthrough over nvme-char - Kanchan Joshi](https://lore.kernel.org/linux-nvme/20210805125539.66958-1-joshi.k@samsung.com/) \
 [2] io_uring fio: [GitHub - joshkan/fio at uring\_cmd\_nvme\_v4](https://github.com/joshkan/fio/blob/big-cqe-pt.v4/engines/io_uring.c)
 
 [3] liburing: [GitHub - axboe/liburing](https://github.com/axboe/liburing)
