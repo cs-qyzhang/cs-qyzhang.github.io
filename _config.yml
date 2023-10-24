@@ -55,7 +55,7 @@ google_site_verification:               # fill in to your verification string
 # The end of `jekyll-seo-tag` settings
 
 google_analytics:
-  id: 'G-69KYY40RMN'  # fill in your Google Analytics ID
+  id: ''  # fill in your Google Analytics ID
   # Google Analytics pageviews report settings
   pv:
     proxy_endpoint:   # fill in the Google Analytics superProxy endpoint of Google App Engine
@@ -82,7 +82,7 @@ theme_mode:   # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://qyzhang-obsidian.oss-cn-hangzhou.aliyuncs.com/avatar.jpg
+avatar: 
 
 # boolean type, the global switch for ToC in posts.
 toc: true
@@ -98,10 +98,10 @@ comments:
     issue_term:   # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: cs-qyzhang/cs-qyzhang.github.io             # <gh-username>/<repo>
-    repo_id: R_kgDOIuwz6w
-    category: Announcements
-    category_id: DIC_kwDOIuwz684CTkFA
+    repo:              # <gh-username>/<repo>
+    repo_id: 
+    category: 
+    category_id: 
     mapping: pathname      # optional, default to 'pathname'
     input_position: bottom # optional, default to 'bottom'
     lang: zh-CN            # optional, default to the value of `site.lang`
