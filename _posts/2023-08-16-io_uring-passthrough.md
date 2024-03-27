@@ -2,13 +2,16 @@
 categories:
 - SSD
 date: 2023-08-16 20:22:00 +0800
-last_modified_at: 2023-08-16 20:42:03 +0800
+last_modified_at: 2024-03-27 16:15:10 +0800
 tags:
 - linux
 - io_uring
 - nvme
 title: 使用 io_uring 进行 NVMe 命令的异步透传
 ---
+
+> 2024/03/27 更新：USENIX FAST'24 上的论文 [I/O Passthru: Upstreaming a flexible and efficient I/O Path in Linux](https://www.usenix.org/conference/fast24/presentation/joshi) 详细介绍了 NVMe 驱动的 passthru。
+{: .prompt-info }
 
 Linux 5.19 开始加入了 `IORING_OP_URING_CMD` 的支持，该 io_uring 命令可以理解为异步的 ioctl，可以将对应的子命令交给对应的驱动异步执行。其中 NVMe 驱动加入了 `NVME_URING_CMD_IO` 这一子命令，该命令和原来 NVMe 驱动中的 `NVME_IOCTL_IO_CMD` ioctl 命令类似，能够支持 NVMe 命令的透传（passthrough），使用户直接提交 NVMe 命令对应的 SQE，并获取对应的 CQE（一般情况下程序是通过内核的 bio、vfs 等层次间接的与 SSD 通信）。
 
